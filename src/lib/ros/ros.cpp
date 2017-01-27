@@ -106,8 +106,31 @@ Node::Node() :
 	_topicDict.put("vehicle_land_detected", ORB_ID(vehicle_land_detected));
 	_topicDict.put("ekf2_innovations", ORB_ID(ekf2_innovations));
 
-	_paramDict.put("iekf/test1", param_find("IEKF_TEST1"));
-	_paramDict.put("iekf/test2", param_find("IEKF_TEST2"));
+	ROS_INFO("populating ROS topic dict");
+	param_t handle = param_find("IEKF_TEST1");
+	if (handle == PARAM_INVALID) {
+		ROS_WARN("error finding param IEKF_TEST1");
+	} else {
+		ROS_WARN("found param IEKF_TEST1");
+	}
+	_paramDict.put("iekf/test1", handle);
+
+	handle = param_find("IEKF_TEST1");
+	if (handle == PARAM_INVALID) {
+		ROS_WARN("error finding param IEKF_TEST2");
+	} else {
+		ROS_WARN("found param IEKF_TEST2");
+	}
+	_paramDict.put("iekf/test2", handle);
+
+	handle = param_find("IEKF_TEST3");
+	if (handle == PARAM_INVALID) {
+		ROS_WARN("error finding param IEKF_TEST3");
+	} else {
+		ROS_WARN("found param IEKF_TEST3");
+	}
+	_paramDict.put("iekf/test3", handle);
+
 }
 
 Node::~Node()

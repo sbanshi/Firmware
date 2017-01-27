@@ -269,7 +269,7 @@ public:
 	void deleteParam(const char *key);
 
 	template<class T>
-	void param(const char *key, T &val, T defaultValue) const
+	void param(const char *key, T &val, T defaultValue)
 	{
 		if (!getParam(key, val)) {
 			val = defaultValue;

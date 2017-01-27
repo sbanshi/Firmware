@@ -175,10 +175,15 @@ IEKF::IEKF() :
 	_magDeclDeg = magDeclDeg;
 
 
-	float test = 0;
-	_nh.setParam("iekf/test1", 1.0);
-	_nh.getParam("iekf/test1", test);
-	ROS_INFO("XXXXXXXXXXXXX test %10.4f", double(test));
+	//_nh.setParam("iekf/test1", 1.0f);
+	float test1 = 0;
+	_nh.getParam("iekf/test1", test1);
+	ROS_INFO("IEKF_TEST1 %10.4f", double(test1));
+
+	float test2 = 0;
+	_nh.getParam("iekf/test2", test2);
+	ROS_INFO("IEKF_TEST2 %10.4f", double(test2));
+
 }
 
 Vector<float, X::n> IEKF::dynamics(float t, const Vector<float, X::n> &x, const Vector<float, U::n> &u)
