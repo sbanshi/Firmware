@@ -176,14 +176,17 @@ IEKF::IEKF() :
 
 
 	//_nh.setParam("iekf/test1", 1.0f);
-	float test1 = 0;
+	float test1 = 123;
 	_nh.getParam("iekf/test1", test1);
 	ROS_INFO("IEKF_TEST1 %10.4f", double(test1));
 
-	float test2 = 0;
+	float test2 = 456;
 	_nh.getParam("iekf/test2", test2);
 	ROS_INFO("IEKF_TEST2 %10.4f", double(test2));
 
+	float test3 = 789;
+	_nh.getParam("iekf/test3", test3);
+	ROS_INFO("IEKF_TEST3 %10.4f", double(test3));
 }
 
 Vector<float, X::n> IEKF::dynamics(float t, const Vector<float, X::n> &x, const Vector<float, U::n> &u)

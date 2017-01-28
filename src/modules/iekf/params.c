@@ -19,7 +19,7 @@ PARAM_DEFINE_FLOAT(IEKF_TEST1, 1.0f);
  * @group IEKF
  * @unit m
  * @min -1
- * @max 1
+ * @max 2
  * @decimal 3
  */
-PARAM_DEFINE_FLOAT(IEKF_TEST2, 1.0f);
+PARAM_DEFINE_FLOAT(IEKF_TEST2, 2.0f);
